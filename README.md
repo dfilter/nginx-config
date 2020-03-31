@@ -54,9 +54,18 @@ WantedBy=multi-user.target
 4.  ```# make```
 5.  ```# make install```
 6.  ```# nginx -V``` make sure the arguements match the ones above
-7.  ```# systemctl reload nginx```
+7.  ```# systemctl restart nginx```
 8.  ```# systemctl status nginx```
-9.  
+9.  ```# openssl req -x509 -days 10 -nodes -newkey rsa:2048 -keyout /etc/nginx/ssl/self.key -out /etc/enginx/ssl/self.crt```
+10. 
+
+## Adding http2
+1.  ```# nginx -V```
+2.  Copy "configure arguments"
+3.  ```# ./configure <paste arguments> --with-http_v2_module  --modules-path=/etc/nginx/modules```
+4.  ```# make```
+5.  ```# make install```
+6.  ```# systemctl restart nginx```
 
 ## Unnessisarry extra steps for php-fpm:
 1.  ```# apt install php-fpm```
