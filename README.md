@@ -67,6 +67,9 @@ WantedBy=multi-user.target
 5.  ```# make install```
 6.  ```# systemctl restart nginx```
 
+## Adding HTTPS SSL:
+1.  ```# openssl dhparam 2048 -out /etc/nginx/ssl/dhparam.pem```
+
 ## Unnessisarry extra steps for php-fpm:
 1.  ```# apt install php-fpm```
 2.  ```# systemctl list-units | grep php``` This will show the directory of php-fpm
