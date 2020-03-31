@@ -5,7 +5,7 @@
 4.  ```# tar -zxvf nginx-x.x.x.tar.gz```
 5.  ```# cd nginx.x.x.x```
 6.  ```# apt install build-essential```
-7.  ```# ./configure``
+7.  ```# ./configure```
 8.  Read the output and install missing dependencies these may not be the same as the ones listed below
 9.  ```# apt install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev```
 10. For detailed info on configuring nginx build go to nginx.org/en/docs/configure.html 
@@ -49,5 +49,5 @@ WantedBy=multi-user.target
 
 ## Unnessisarry extra steps for php-fpm:
 1.  ```# apt install php-fpm```
-2.  ```# systemctl list-units | grep php```
-3.  ```# systemctl status php7.2-fpm```
+2.  ```# systemctl list-units | grep php``` This will show the directory of php-fpm
+3.  ```# systemctl status php7.2-fpm``` Shows the status of php-fpm
