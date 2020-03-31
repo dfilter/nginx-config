@@ -47,6 +47,17 @@ WantedBy=multi-user.target
 29. ```# reboot```
 30. ```# systemctl status nginx```
 
+## Adding dynamic modules:
+1.  ```# nginx -V```
+2.  Copy "configure arguments"
+3.  ```# ./configure <paste arguments> <add other modules to install here>  --modules-path=/etc/nginx/modules```
+4.  ```# make```
+5.  ```# make install```
+6.  ```# nginx -V``` make sure the arguements match the ones above
+7.  ```# systemctl reload nginx```
+8.  ```# systemctl status nginx```
+9.  
+
 ## Unnessisarry extra steps for php-fpm:
 1.  ```# apt install php-fpm```
 2.  ```# systemctl list-units | grep php``` This will show the directory of php-fpm
