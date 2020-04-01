@@ -57,7 +57,6 @@ WantedBy=multi-user.target
 7.  ```# systemctl restart nginx```
 8.  ```# systemctl status nginx```
 9.  ```# openssl req -x509 -days 10 -nodes -newkey rsa:2048 -keyout /etc/nginx/ssl/self.key -out /etc/enginx/ssl/self.crt```
-10. 
 
 ## Adding http2
 1.  ```# nginx -V```
@@ -74,3 +73,7 @@ WantedBy=multi-user.target
 1.  ```# apt install php-fpm```
 2.  ```# systemctl list-units | grep php``` This will show the directory of php-fpm
 3.  ```# systemctl status php7.2-fpm``` Shows the status of php-fpm
+
+## Installing and running siege:
+1.  ```# apt install siege```
+2.  ```# siege -v -r 2 -c 5 https://192.168.2.77/index.php``` Two requests of 5 concurrent users
