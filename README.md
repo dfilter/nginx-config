@@ -91,3 +91,21 @@ WantedBy=multi-user.target
 ## Installing and running siege:
 1.  ```# apt install siege```
 2.  ```# siege -v -r 2 -c 5 https://192.168.2.77/index.php``` 2 requests of 5 concurrent users
+
+## Installing certbot:
+1.  Add Certbot PPA:
+    ```apt-get update```
+    ```apt install software-properties-common```
+    ```add-apt-repository universe```
+    ```add-apt-repository ppa:certbot/certbot```
+    ```apt update```
+2.  Install Certbot:
+    ```apt install certbot python-certbot-nginx```
+3.  Run Certbot:
+    ```certbot --nginx```
+4.  To renew certificates:
+    ```certbot renew --dry-run```
+5.  Cert renewal conjob:
+    ```crontab -e```
+6.  Add the following to the bottom:
+    ```@daily certbot renew```
