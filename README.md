@@ -68,6 +68,12 @@ WantedBy=multi-user.target
 
 ## Adding HTTPS SSL:
 1.  ```# openssl dhparam 2048 -out /etc/nginx/ssl/dhparam.pem```
+2. See config file for remaining info
+
+## Adding NGINX auth:
+1.  ```# apt install apache2-utils```
+2.  ```# htpasswd -c /etc/nginx/.htpasswd <enter username here>```
+3.  Follow the on screen instructions and continue to the nginx.conf file.
 
 ## Unnessisarry extra steps for php-fpm:
 1.  ```# apt install php-fpm```
@@ -76,4 +82,4 @@ WantedBy=multi-user.target
 
 ## Installing and running siege:
 1.  ```# apt install siege```
-2.  ```# siege -v -r 2 -c 5 https://192.168.2.77/index.php``` Two requests of 5 concurrent users
+2.  ```# siege -v -r 2 -c 5 https://192.168.2.77/index.php``` 2 requests of 5 concurrent users
