@@ -75,6 +75,14 @@ WantedBy=multi-user.target
 2.  ```# htpasswd -c /etc/nginx/.htpasswd <enter username here>```
 3.  Follow the on screen instructions and continue to the nginx.conf file.
 
+## Securing NGINX:
+1.  ```# apt update``
+2.  ```# apt upgrade```
+3.  ```# nginx -V``` view changelog to see if there is a security update in newer versions
+4.  See changes in 17-hardening-NGINX/nginx.conf for more security details 
+5.  Remove unused NGINX modules. Go to NGINX source folder and run the following command to see which modules are added by defualt
+6.  ```# ./configure --help | grep without``` this will list all the modules that come with NGINX by default some of these might not be used and therefor can be removed.
+
 ## Unnessisarry extra steps for php-fpm:
 1.  ```# apt install php-fpm```
 2.  ```# systemctl list-units | grep php``` This will show the directory of php-fpm
